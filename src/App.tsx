@@ -1,11 +1,25 @@
 import './App.css'
 import {useEffect} from "react";
 
-function App() {
+const SOCIAL_LINKS = [
+  {
+    label: "Discord",
+    link: "https://discord.gg/GwJcrhPT7h",
+    quickLinkPathname: "/dc",
+  },
+  {
+    label: "GitHub",
+    link: "https://github.com/side-project-taiwan",
+    quickLinkPathname: "/github",
+  },
+];
 
+function App() {
   useEffect(() => {
-    if (window.location.pathname === '/dc') {
-      window.location.href = 'https://discord.gg/GwJcrhPT7h';
+    for (const { quickLinkPathname, link } of SOCIAL_LINKS) {
+      if (window.location.pathname === quickLinkPathname) {
+        window.location.href = link;
+      }
     }
   }, []);
 
@@ -37,7 +51,17 @@ function App() {
       </p>
       <p>歡迎所有對專案開發有興趣的人加入我們，一同打造一個充滿活力且有意義的技術社群！</p>
       <h3>瞭解更多</h3>
-      <a href="https://discord.gg/GwJcrhPT7h" target="_blank" rel="noreferrer">Discord</a>
+      <nav>
+        <ul style={{ listStyleType: "none", padding: 0 }}>
+          {SOCIAL_LINKS.map(({ label, link }) => (
+            <li key={link}>
+              <a href={link} target="_blank" rel="noreferrer">
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </>
   )
 }
