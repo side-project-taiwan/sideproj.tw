@@ -1,0 +1,17 @@
+REV=`git describe --always`
+git clone git@github.com:g0v/grants-landing-template --depth 1 -b gh-pages _public
+git clone git@github.com:g0v/grants-landing-template --depth 1 -b grants/middle2 _middle2
+git clone git@github.com:g0v/grants-landing-template --depth 1 -b master _master
+cd _public
+git rm -rf *
+rm -rf ../_master/.git
+rm -rf ../_middle2/.git
+cp -R ../_master/ ./
+cp -R ../_middle2/ ./middle2/
+git add * 
+git commit -m "regen for $REV"
+git push
+cd ..
+rm -rf _public
+rm -rf _middle2
+rm -rf _master

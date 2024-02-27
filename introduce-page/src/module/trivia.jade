@@ -1,0 +1,14 @@
+//- module
+.section.section-trivia: .inner
+  .text-center: h2 提供的選項有哪些？
+  p 如果你的專案做了許多事想要火力展示，卻又不適合寫一大堆東西的時候，做成迷你表列會更適合。
+  br
+  .row
+    each item in [["Runtime","birthday-cake"],["Redis","bus"],["Scale","camera"],["Add-ons","calculator"],["Storage","bullhorn"],["AI","check-circle"],["Extensibility","cloud"],["Github","binoculars"]]
+      .col-6.col-md-3
+        .media
+          i.fa.mr-2.mt-1(class="fa-" + item[1])
+          .media-body
+            span.name: b #{item[0]}
+            p(style="line-height:1.4em;font-size:0.6em;color:#444") 可以簡單介紹一下 #{item[0]}，長度不拘但各項間可以對齊。
+
