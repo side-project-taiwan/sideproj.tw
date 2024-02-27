@@ -1,0 +1,7 @@
+.sass-cache
+node_modules
+npm-debug.log
+.*
+!.gitignore
+assets
+.vscode/
