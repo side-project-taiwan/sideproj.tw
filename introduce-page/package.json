@@ -15,7 +15,6 @@
   "scripts": {
     "prebuild": "rm -rf build && mkdir build && cp -r src/img build && cp src/index.css build",
     "build": "pug src/index.jade --out ./build --pretty",
-    
     "start": "node_modules/.bin/lsc server.ls",
     "restart": "node_modules\\.bin\\lsc server.ls",
     "prepare": "npm install chokidar@1.7.0"
