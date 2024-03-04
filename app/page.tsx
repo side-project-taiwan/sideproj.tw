@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect } from 'react'
 
 const SOCIAL_LINKS = [
@@ -73,9 +74,9 @@ export default function Home() {
 				<ul style={{ listStyleType: 'none', padding: 0 }}>
 					{SOCIAL_LINKS.map(({ label, link }) => (
 						<li key={link}>
-							<a href={link} target="_blank" rel="noreferrer">
+							<Link href={link} target="_blank" rel="noreferrer">
 								{label}
-							</a>
+							</Link>
 						</li>
 					))}
 				</ul>
