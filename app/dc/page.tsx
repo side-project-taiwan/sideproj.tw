@@ -1,14 +1,6 @@
-'use client'
+import {redirect} from 'next/navigation'
 
-import { useEffect } from 'react'
-import { redirect } from 'next/navigation'
-
-export const page = () => {
-	useEffect(() => {
-		redirect('https://discord.gg/GwJcrhPT7h')
-	}, [])
-
-	return null
+export default () => {
+  redirect('https://discord.gg/GwJcrhPT7h')
 }
 
-export default page
