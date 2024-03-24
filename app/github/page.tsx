@@ -1,5 +1,5 @@
-import {redirect} from 'next/navigation'
+import { redirect } from "next/navigation";
 
-export default () => {
-  redirect('https://github.com/side-project-taiwan')
+export default function GithubPage() {
+  redirect("https://github.com/side-project-taiwan");
 }
