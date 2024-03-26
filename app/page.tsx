@@ -1,5 +1,5 @@
 import Link from 'next/link'
-
+import Image from "next/image";
 const SOCIAL_LINKS = [
   {label: 'Discord', quickLinkPathname: '/dc'},
   {label: 'GitHub', quickLinkPathname: '/github'}
@@ -9,7 +9,14 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center w-full lg:w-[720px] m-auto gap-y-6">
       <div>
-        <img src="/logo.svg" className="logo vite" alt="logo" style={{scale: 2}}/>
+      <Image
+        src="/logo.svg"
+        className="logo vite"
+        width={500}
+        height={300}
+        alt="logo"
+        style={{scale: 2}}
+      />
       </div>
       <p>
         Side Project Taiwan
