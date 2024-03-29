@@ -2,6 +2,13 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:storybook/recommended",
-    "eslint-config-prettier"
-  ]
+    "eslint-config-prettier",
+    "prettier-plugin-tailwindcss"
+  ],
+  "rules": {
+    "eqeqeq": "error",
+    "no-unused-vars": "error",
+    "no-console": "error",
+    "import/no-anonymous-default-export": "off"
+  }
 }
