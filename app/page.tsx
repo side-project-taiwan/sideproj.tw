@@ -1,22 +1,22 @@
 import Link from 'next/link'
-import Image from "next/image";
+import Image from 'next/image'
 const SOCIAL_LINKS = [
-  {label: 'Discord', quickLinkPathname: '/dc'},
-  {label: 'GitHub', quickLinkPathname: '/github'}
+  { label: 'Discord', quickLinkPathname: '/dc' },
+  { label: 'GitHub', quickLinkPathname: '/github' },
 ]
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center w-full lg:w-[720px] m-auto gap-y-6">
+    <div className='m-auto flex w-full flex-col items-center justify-center gap-y-6 lg:w-[720px]'>
       <div>
-      <Image
-        src="/logo.svg"
-        className="logo vite"
-        width={500}
-        height={300}
-        alt="logo"
-        style={{scale: 2}}
-      />
+        <Image
+          src='/logo.svg'
+          className='logo vite'
+          width={500}
+          height={300}
+          alt='logo'
+          style={{ scale: 2 }}
+        />
       </div>
       <p>
         Side Project Taiwan
@@ -29,7 +29,7 @@ export default function Home() {
         Side Project，這使得參與者不僅限於工程師，也歡迎 PM、設計師、QA
         等多元角色參與。
       </p>
-      <ol style={{textAlign: 'left'}}>
+      <ol style={{ textAlign: 'left' }}>
         <li>
           講者/主題演講： 每次聚會都有專業的講者，分享與 Side Project
           相關的技術、經驗和見解。
@@ -53,10 +53,10 @@ export default function Home() {
       </p>
       <h3>瞭解更多</h3>
       <nav>
-        <ul style={{listStyleType: 'none', padding: 0}}>
-          {SOCIAL_LINKS.map(({label, quickLinkPathname}) => (
+        <ul style={{ listStyleType: 'none', padding: 0 }}>
+          {SOCIAL_LINKS.map(({ label, quickLinkPathname }) => (
             <li key={label}>
-              <Link href={quickLinkPathname} target="_blank" rel="noreferrer">
+              <Link href={quickLinkPathname} target='_blank' rel='noreferrer'>
                 {label}
               </Link>
             </li>
@@ -66,4 +66,3 @@ export default function Home() {
     </div>
   )
 }
-
