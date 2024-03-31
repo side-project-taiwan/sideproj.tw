@@ -20,10 +20,13 @@ Please check the following sections below:
 
 ### Check list
 
+
 - [ ] Format your code before pushing (`pnpm run format`)
 - [ ] Run tests before pushing (`pnpm run test`)
 - [ ] Check code linting before pushing (`pnpm run lint`)
+- [ ] The PR title is clear and follows naming conventions
 - [ ] I have updated relevant documentation (optional)
+
 
 ### Additional Notes
 
