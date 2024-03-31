@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import GithubSvg from '../assets/github_thumbnail.svg'
-import DiscordSvg from '../assets/discord_thumbnail.svg'
-import { DiscordLink, GithubLink } from '../constants/urls'
+import GithubSvg from '@/assets/github_thumbnail.svg'
+import DiscordSvg from '@/assets/discord_thumbnail.svg'
+import { DiscordLink, GithubLink } from '@/constants/urls'
 
-const LinkSets = [
+const LinksConfig = [
 	{ name: '關於SPT', url: '#' },
 	{ name: '聯絡我們', url: '#' },
 	{ name: '技術支援', url: '#' }
@@ -23,19 +23,18 @@ export const Header = () => {
 				/>
 			</Link>
 
-			<nav className="flex items-center justify-center gap-6 text-[1.25rem]">
-				{LinkSets.map(({ url, name }) => {
-					return (
-						<Link
-							href={url}
-							className="cursor-pointer text-black hover:text-blue-700 hover:border-b-4 hover:border-blue-200 hover:font-bold"
-						>
-							{name}
-						</Link>
-					)
-				})}
+			<nav className="flex items-center justify-center gap-6 text-[1rem]">
+				{LinksConfig.map(({ url, name }) => (
+					<Link
+						key={name}
+						href={url}
+						className="cursor-pointer text-black hover:text-blue-700 hover:border-b-4 hover:border-blue-200 hover:font-bold"
+					>
+						{name}
+					</Link>
+				))}
 
-				<Link href={DiscordLink} target="_blank">
+				<Link href={DiscordLink} target="_blank" className="hover:scale-[1.1]">
 					<Image
 						priority
 						alt="Follow us on Discord"
@@ -44,7 +43,7 @@ export const Header = () => {
 						height={32}
 					/>
 				</Link>
-				<Link href={GithubLink} target="_blank">
+				<Link href={GithubLink} target="_blank" className="hover:scale-[1.1]">
 					<Image
 						priority
 						alt="Follow us on Github"
