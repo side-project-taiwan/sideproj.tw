@@ -1,9 +1,34 @@
+"use client"
 import Link from 'next/link'
 import Image from 'next/image'
+import React from 'react';
+
 const SOCIAL_LINKS = [
-  { label: 'Discord', quickLinkPathname: '/dc' },
-  { label: 'GitHub', quickLinkPathname: '/github' },
+  { label: 'Discord', quickLinkPathname: 'https://discord.gg/GwJcrhPT7h', isRedirect: true },
+  { label: 'GitHub', quickLinkPathname: 'https://github.com/side-project-taiwan', isRedirect: true },
 ]
+interface Link {
+  label: string;
+  quickLinkPathname: string;
+  isRedirect: boolean;
+}
+const renderLink = ({ label, quickLinkPathname, isRedirect }: Link): JSX.Element => {
+  if (isRedirect) {
+    return (
+      <button onClick={() => window.open(quickLinkPathname, '_blank')} style={{ cursor: 'pointer', border: 'none', background: 'none' }}>
+        {label}
+      </button>
+    );
+  }
+
+  return (
+    <a href={quickLinkPathname} target='_blank' rel='noreferrer'>
+      {label}
+    </a>
+  );
+};
+
+
 
 export default function Home() {
   return (
@@ -54,11 +79,9 @@ export default function Home() {
       <h3>瞭解更多</h3>
       <nav>
         <ul style={{ listStyleType: 'none', padding: 0 }}>
-          {SOCIAL_LINKS.map(({ label, quickLinkPathname }) => (
-            <li key={label}>
-              <Link href={quickLinkPathname} target='_blank' rel='noreferrer'>
-                {label}
-              </Link>
+          {SOCIAL_LINKS.map((link, index) => (
+            <li key={index}>
+              {renderLink(link)}
             </li>
           ))}
         </ul>
