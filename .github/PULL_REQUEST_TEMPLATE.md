@@ -21,7 +21,6 @@ Please check the following sections below:
 ### Check list
 
 - [ ] Format your code before pushing (`pnpm prettier-fix`)
-- [ ] Run tests before pushing (`pnpm test`)
 - [ ] Check code linting before pushing (`pnpm lint`)
 - [ ] I have updated relevant documentation
 
