@@ -14,8 +14,7 @@
         "args": "all",
         "caughtErrors": "all",
         "argsIgnorePattern": "^_",
-        "caughtErrorsIgnorePattern": "^_",
-        "destructuredArrayIgnorePattern": "^_"
+        "caughtErrorsIgnorePattern": "^_"
       }
     ]
   }
