@@ -12,9 +12,7 @@
     "prettier-check": "prettier --check .",
     "prettier-fix": "prettier --write .",
     "test": "vitest",
-    "test:watch": "vitest --watch",
-    "test:coverage": "vitest run --coverage",
-    "test:coverage:open": "vitest run --coverage && open coverage/index.html"
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "next": "14.1.1",
