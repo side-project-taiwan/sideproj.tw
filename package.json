@@ -8,9 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "prettier-check": "prettier --check .",
-    "prettier-fix": "prettier --write ."
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "next": "14.1.1",
