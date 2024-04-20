@@ -1,0 +1,11 @@
+*.yaml
+*.yml
+*.html
+node_modules/
+
+# Build
+dist/
+.next/
+_next/
+__temp__/
+
