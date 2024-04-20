@@ -15,13 +15,10 @@ export default defineConfig({
   test: {
     globals: true,
     setupFiles: './scripts/vitest/setup.ts',
-    environment: 'jsdom',
+    environmentMatchGlobs: [['{app,components,containers}/**', 'jsdom']],
     includeSource: SOURCE_FILES,
     include: ['**/__tests__/*.test.[jt]s?(x)'],
     exclude: [...configDefaults.exclude, '**/.next/**'],
-    coverage: {
-      provider: 'v8',
-      include: SOURCE_FILES,
-    },
+    coverage: { provider: 'v8', include: SOURCE_FILES },
   },
 })
