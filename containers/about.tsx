@@ -1,10 +1,9 @@
-'use client'
-
 import React from 'react'
 import Link from 'next/link'
 
 import { SectionTitle } from '@/components/section-title'
 import { SOCIAL_LINKS } from '@/constants/links'
+import Image from 'next/image'
 
 export const About = () => {
   return (
@@ -34,9 +33,11 @@ export const About = () => {
               href={link.quickLinkPathname}
               className='flex h-[2.5rem] w-full items-center justify-center rounded-md bg-primary-light text-[0.875rem] text-[#2563EB]'
             >
-              <img
+              <Image
                 src={`/about/${link.label.toLowerCase()}_icon.svg`}
                 alt={link.label}
+                width={16}
+                height={16}
                 className='mr-[0.5rem]'
               />
               {link.label}

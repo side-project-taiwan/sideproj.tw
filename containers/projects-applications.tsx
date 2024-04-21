@@ -1,6 +1,7 @@
 import React from 'react'
 import { SectionTitle } from '@/components/section-title'
 import { FORM_CONFIG } from '@/constants/project-form'
+import Image from 'next/image'
 
 const formConfig = FORM_CONFIG
 
@@ -10,7 +11,13 @@ export const ProjectsApplications = () => {
       <SectionTitle type='NEW_PROJECT' />
 
       <div className='flex h-full w-full items-start gap-[0.5rem] rounded-md bg-primary-light p-3 text-[0.875rem] leading-[1.5313rem] text-primary'>
-        <img src='/project-application/waving_hand.svg' className='m-1' />
+        <Image
+          src='/project-application/waving_hand.svg'
+          alt='waving_hand'
+          width={10}
+          height={10}
+          className='m-1'
+        />
         <div>
           <div className='font-[500]'>Hi 你也想開專案嗎</div>
           <div>
@@ -24,7 +31,7 @@ export const ProjectsApplications = () => {
         // 使否有存在的必要
         if (item.tag === 'select') {
           return (
-            <div className='flex flex-col gap-[0.5rem]'>
+            <div className='flex flex-col gap-[0.5rem]' key={index}>
               <div className='mb-[0.25rem]'>{item.label}</div>
               <select className='h-[2.25rem] w-full rounded-md border-[0.0625rem] border-[#E4E4E7] px-[0.75rem] text-[0.875rem] text-[#A1A1AA]'>
                 <option value='option1'>option1</option>
@@ -37,7 +44,7 @@ export const ProjectsApplications = () => {
 
         if (item.tag === 'textarea') {
           return (
-            <div className='flex flex-col gap-[0.5rem]'>
+            <div className='flex flex-col gap-[0.5rem]' key={index}>
               <div>{item.label}</div>
               <textarea
                 className='flex h-[5.25rem] w-full items-center justify-center rounded-md border-[0.0625rem] border-[#E4E4E7] pl-[0.75rem] pt-[0.5rem] text-[0.875rem] text-[#A1A1AA]'
@@ -49,7 +56,7 @@ export const ProjectsApplications = () => {
 
         if (item.tag === 'input') {
           return (
-            <div className='flex flex-col gap-[.5rem]'>
+            <div className='flex flex-col gap-[.5rem]' key={index}>
               <div>{item.label}</div>
               {/* //! TODO 選擇檔案需要調整 */}
               <input

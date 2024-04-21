@@ -1,5 +1,7 @@
 'use client'
+
 import React, { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 
 const mockArray = [1, 2, 3, 4, 5]
 
@@ -28,7 +30,7 @@ export const Carousel = () => {
     return () => {
       if (element) element.removeEventListener('scroll', scrollHandler)
     }
-  }, [])
+  }, [ref.current])
 
   return (
     <div>
@@ -44,8 +46,8 @@ export const Carousel = () => {
               className='relative h-[211px] min-w-full snap-start'
               onClick={() => handleImageClick(index)}
             >
-              <img
-                src={'https://fakeimg.pl/375x211/'}
+              <Image
+                src={'/logo.svg'}
                 alt={`carousel_${index}`}
                 width={375}
                 height={211}

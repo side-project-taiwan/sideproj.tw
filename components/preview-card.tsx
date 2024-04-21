@@ -1,4 +1,5 @@
 import { PreviewCardTypes } from '@/types/projects'
+import Image from 'next/image'
 import React from 'react'
 
 type PreviewCardProps = PreviewCardTypes
@@ -8,7 +9,7 @@ export const PreviewCard = (props: PreviewCardProps) => {
   return (
     <section className='flex w-full flex-col gap-[0.625rem] border-b-[0.0625rem] border-[#E4E4E7] pb-[1rem] pt-[1.25rem]'>
       <div className='flex gap-[0.75rem]'>
-        <img src={imgUrl} alt='' className='h-[42px] w-[64px]' />
+        <Image src={'/logo.svg'} alt='' width={42} height={64} />
         <div className='flex flex-1 flex-col'>
           <span>{projectName}</span>
           <span className='text-[0.625rem] text-[#ff8f5c]'>{createTime}</span>
