@@ -4,7 +4,7 @@ import Image from 'next/image'
 type PreviewCardProps = PreviewCardTypes
 
 const PreviewCard = (props: PreviewCardProps) => {
-  const { imgUrl, projectName, tags, description, createTime } = props
+  const { projectName, tags, description, createTime } = props
   return (
     <div className='flex w-full flex-col gap-y-2'>
       <div className='flex flex-col gap-y-3'>
