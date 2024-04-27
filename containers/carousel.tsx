@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { twMerge } from '@/libs/utils'
+import { cn } from '@/libs/utils'
 
 const mockArray = [1, 2, 3, 4, 5]
 
@@ -65,9 +65,9 @@ export const Carousel = () => {
           return (
             <li
               key={index}
-              className={twMerge(
+              className={cn(
                 'h-[0.375rem] w-[0.375rem] rounded-full',
-                idx === index ? 'bg-primary' : 'bg-[#E4E4E7]',
+                idx === index ? 'bg-blue-600' : 'bg-zinc-200',
               )}
               onClick={() => handleSpotsClick(index)}
             />
