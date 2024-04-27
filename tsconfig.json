@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "downlevelIteration": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -13,12 +12,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [{ "name": "next" }],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
-      "@/*": ["./*"],
-      "components": ["@/components"],
-      "utils": ["@/libs/utils"],
-      "ui": ["@/ui"]
+      "@/*": ["./src/*"]
     },
     "types": ["vitest/globals", "vitest/jsdom"]
   },
