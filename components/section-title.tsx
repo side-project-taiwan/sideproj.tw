@@ -1,5 +1,5 @@
 import { PAGE_CATEGORIES } from '@/constants/category'
-import { twMerge } from '@/libs/utils'
+import { cn } from '@/libs/utils'
 
 type SectionTitleProps = {
   type: keyof typeof PAGE_CATEGORIES
@@ -14,9 +14,7 @@ export const SectionTitle = (props: SectionTitleProps) => {
 
   if (type === 'COOPERATIONS' || type === 'ABOUT') {
     return (
-      <h5
-        className={twMerge('mb-4 text-xl font-[500] text-[#18181B]', className)}
-      >
+      <h5 className={cn('mb-4 text-xl font-[500] text-zinc-900', className)}>
         {categories}
       </h5>
     )
@@ -25,13 +23,11 @@ export const SectionTitle = (props: SectionTitleProps) => {
   const [highlightWord, ...subTitle] = categories
 
   return (
-    <h5 className={twMerge('mb-4 flex h-9 items-center gap-2', className)}>
-      <div className='flex h-9 w-9 items-center justify-center rounded-full bg-primary text-[1.25rem] leading-[1.75rem] text-[white]'>
+    <h5 className={cn('mb-4 flex h-9 items-center gap-2', className)}>
+      <div className='flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 text-xl text-white'>
         {highlightWord}
       </div>
-      <div className='text-[1.25rem] font-[600] leading-[1.75rem]'>
-        {subTitle}
-      </div>
+      <div className='text-xl font-[600]'>{subTitle}</div>
     </h5>
   )
 }

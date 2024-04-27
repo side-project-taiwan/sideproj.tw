@@ -1,6 +1,6 @@
 import { TopBar } from '@/containers/topbar'
 import { Carousel } from '@/containers/carousel'
-// import {SearchBar} from '@/containers/searchbar'
+// import { SearchBar } from '@/containers/searchbar'
 import { ProjectsPreview } from '@/containers/projects-preview'
 import { Footer } from '@/containers/footer'
 import { About } from '@/containers/about'

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const NotFoundPage = () => {
   return (
-    <div className='text-white flex h-full w-full flex-col items-center justify-center'>
+    <div className='flex h-full w-full flex-col items-center justify-center text-white'>
       <Image
         src='/logo.svg'
         className='logo vite mb-24 scale-[2]'

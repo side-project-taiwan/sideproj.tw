@@ -5,8 +5,8 @@ import { SOCIAL_LINKS } from '@/constants/links'
 
 export const About = () => {
   return (
-    <div className='bg-[#2563EB] px-5 py-6 text-[white] '>
-      <SectionTitle type='ABOUT' className='text-[inherit]' />
+    <div className='bg-blue-600 px-5 py-6 text-white'>
+      <SectionTitle type='ABOUT' className='text-inherit' />
 
       <div className='mb-4 text-sm'>
         <p>
@@ -38,11 +38,11 @@ export const About = () => {
           return (
             <li
               key={link.label}
-              className='flex h-10 w-full items-center justify-center rounded-md bg-[white]'
+              className='flex h-10 w-full items-center justify-center rounded-md bg-white'
             >
               <Link
                 href={link.quickLinkPathname}
-                className='flex items-center justify-center gap-x-2  text-sm text-[#2563EB]'
+                className='flex items-center justify-center gap-x-2  text-sm text-blue-600'
               >
                 <Image
                   src={`/about/${link.label.toLowerCase()}_icon.svg`}
