@@ -48,6 +48,10 @@ const config = {
         'zinc-800': '#27272A',
         'zinc-900': '#18181B',
       },
+      borderRadius: {
+        xs: '0.125rem',
+        sm: '0.25rem',
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },

@@ -1,11 +1,11 @@
 'use client'
+import type { CategoryListTypes } from '@/types/projects'
 import React, { useMemo, useState } from 'react'
 import PreviewCard from '@/components/preview-card'
 import { SectionTitle } from '@/components/section-title'
 import { CATEGORY_LIST } from '@/constants/category'
 import { mockData } from '@/constants/mockData'
-import { CategoryListTypes } from '@/types/projects'
-import { twMerge } from '@/libs/utils'
+import { cn } from '@/libs/utils'
 
 const categoryList: CategoryListTypes[] = CATEGORY_LIST
 
@@ -28,15 +28,16 @@ export const ProjectsPreview = () => {
 
       {/* 內文 project */}
       <div>
-        <ul className='m-0 mb-5 flex list-none border-b border-[#E4E4E7] p-0'>
+        <ul className='m-0 mb-5 flex list-none border-b border-zinc-200 p-0'>
           {categoryList.map((category, index) => {
             return (
               <li
                 key={index}
                 onClick={handleCategoryActive(category)}
-                className={twMerge(
-                  'flex h-10 items-center justify-center px-3 py-2 text-[0.875rem] text-[#A1A1AA]',
-                  currentCategory === category && 'border-b-2 border-[#2563EB]',
+                className={cn(
+                  'flex h-10 items-center justify-center px-3 py-2 text-sm text-zinc-400',
+                  currentCategory === category &&
+                    'border-b-2 border-blue-600 text-blue-600',
                 )}
               >
                 {category}
@@ -48,7 +49,7 @@ export const ProjectsPreview = () => {
           {currentData.map((card, index) => (
             <li
               key={index}
-              className='border-b border-[#E4E4E7] pb-4 last:border-0'
+              className='border-b border-zinc-200 pb-4 last:border-0'
             >
               <PreviewCard
                 imgUrl={card.imgUrl}

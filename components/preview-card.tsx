@@ -10,10 +10,15 @@ const PreviewCard = (props: PreviewCardProps) => {
       <div className='flex flex-col gap-y-3'>
         {/* Thumbnail and ProjectName */}
         <div className='flex gap-x-3'>
-          <Image src={'/logo.svg'} alt='' width={42} height={64} />
+          <Image
+            src={'/logo.svg'}
+            alt='project thumbnail'
+            width={42}
+            height={64}
+          />
           <div className='flex flex-1 flex-col'>
             <span>{projectName}</span>
-            <span className='text-[0.625rem] text-[#ff8f5c]'>{createTime}</span>
+            <span className='text-xs text-blue-600'>{createTime}</span>
           </div>
         </div>
         {/* Tags */}
@@ -22,7 +27,7 @@ const PreviewCard = (props: PreviewCardProps) => {
             return (
               <li
                 key={index}
-                className='flex h-[1.375rem] w-fit items-center justify-center rounded-[0.25rem] bg-[#E4E4E7] px-[0.5rem] py-[0.25rem] text-[0.625rem] text-[#71717A]'
+                className='flex h-[1.375rem] w-fit items-center justify-center rounded-sm bg-zinc-200 px-2 py-1 text-xs text-zinc-500'
               >
                 {tag}
               </li>
@@ -30,7 +35,7 @@ const PreviewCard = (props: PreviewCardProps) => {
           })}
         </ul>
       </div>
-      <div className='line-clamp-3 text-[0.75rem] text-[#71717A]'>
+      <div className='line-clamp-3 text-xs text-zinc-500'>
         {description}
         目前對等的例子是 Ant Design 和 Material Design 這類的 Web UI
         Library。Target 是正在軟體相關行業的 UI/UX Designer & Frontend Engineer

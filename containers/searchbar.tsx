@@ -5,7 +5,7 @@ const SearchBar = () => {
     <section className='flex h-10 w-full items-center justify-center'>
       <label
         htmlFor='search-button'
-        className='flex h-full w-full items-center gap-x-2 rounded-full border border-solid border-[#E4E4E7] px-3 py-2'
+        className='flex h-full w-full items-center gap-x-2 rounded-full border border-zinc-200 px-3 py-2'
       >
         <Image
           src='/homepage/search.svg'
