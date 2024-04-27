@@ -1,21 +1,26 @@
-import React from 'react'
+import Image from 'next/image'
 
-export const SearchBar = () => {
+const SearchBar = () => {
   return (
-    <section className='flex h-[2.5rem] w-full items-center justify-center'>
-      {/* search-bar */}
-      <label htmlFor='search-button' className='relative w-full'>
-        <img
+    <section className='flex h-10 w-full items-center justify-center'>
+      <label
+        htmlFor='search-button'
+        className='flex h-full w-full items-center gap-x-2 rounded-full border border-solid border-[#E4E4E7] px-3 py-2'
+      >
+        <Image
           src='/homepage/search.svg'
           alt='search-button'
-          className='absolute top-1/2 -translate-y-1/2 translate-x-1/2'
+          width={20}
+          height={20}
         />
         <input
           type='text'
           placeholder='關鍵字搜尋專案'
-          className='h-full w-full rounded-full border-[1px] border-[#E4E4E7] py-[0.625rem] pl-[2.625rem] pr-[0.75rem] text-[0.875rem] text-[#A1A1AA]'
+          className='h-full w-full'
         />
       </label>
     </section>
   )
 }
+
+export default SearchBar

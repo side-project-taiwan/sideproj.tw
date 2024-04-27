@@ -17,7 +17,8 @@
   "dependencies": {
     "next": "14.1.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "1.2.25",
