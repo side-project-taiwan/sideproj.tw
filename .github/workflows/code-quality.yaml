@@ -1,0 +1,96 @@
+name: ✨ Code Quality Check
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: 🧶 ESLint
+    runs-on: ubuntu-22.04
+    steps:
+      - name: 👀 Checkout repo
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 📥 Download deps
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+          run_install: true
+
+      - name: 🧶 Lint
+        run: pnpm lint
+
+  typecheck:
+    name: 🔬 TypeScript
+    runs-on: ubuntu-22.04
+    steps:
+      - name: 👀 Checkout repo
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 📥 Download deps
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+          run_install: true
+
+      - name: 🔬 Type check
+        run: pnpm typecheck
+
+  vitest:
+    name: ⚡ Vitest
+    runs-on: ubuntu-22.04
+    steps:
+      - name: 👀 Checkout repo
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 📥 Download deps
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+          run_install: true
+
+      - name: ⚡ Run vitest
+        run: pnpm test:coverage
+
+  format:
+    name: 📏 Format
+    runs-on: ubuntu-22.04
+    steps:
+      - name: 👀 Checkout repo
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 📥 Download deps
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+          run_install: true
+
+      - name: 📏 Format
+        run: pnpm format:check
