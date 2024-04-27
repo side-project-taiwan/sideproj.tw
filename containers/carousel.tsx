@@ -1,11 +1,11 @@
 'use client'
-
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import { twMerge } from '@/libs/utils'
 
 const mockArray = [1, 2, 3, 4, 5]
 
-export const Carousel = () => {
+const Carousel = () => {
   const [idx, setIdx] = useState(0)
   const ref = useRef<HTMLDivElement | null>(null)
 
@@ -15,7 +15,7 @@ export const Carousel = () => {
     if (ref.current) ref.current.scrollLeft = id * 375 // 每张图片宽度为375px
   }
 
-  const handleImageClick = (id: number) => {}
+  const handleImageClick = (_id: number) => {}
 
   useEffect(() => {
     const element = ref.current
@@ -33,13 +33,13 @@ export const Carousel = () => {
   }, [ref.current])
 
   return (
-    <div>
+    <>
       {/* carousel */}
       <div
         ref={ref}
-        className='scrollbar-hide flex snap-x overflow-x-scroll scroll-smooth whitespace-nowrap'
+        className='mb-3 flex snap-x overflow-x-scroll scroll-smooth whitespace-nowrap scrollbar-hide'
       >
-        {mockArray.map((item, index) => {
+        {mockArray.map((_, index) => {
           return (
             <div
               key={index}
@@ -60,17 +60,22 @@ export const Carousel = () => {
         })}
       </div>
       {/* carousel spots */}
-      <div className='flex h-[2.5rem] w-full items-center justify-center gap-[0.75rem] '>
-        {[1, 2, 3, 4, 5].map((item, index) => {
+      <ul className='m-0 flex h-2 w-full list-none items-center justify-center gap-[0.75rem] p-0'>
+        {[1, 2, 3, 4, 5].map((_, index) => {
           return (
-            <div
+            <li
               key={index}
-              className={`h-[0.375rem] w-[0.375rem] rounded-full ${idx !== index ? 'bg-[#E4E4E7]' : 'bg-primary'}`}
+              className={twMerge(
+                'h-[0.375rem] w-[0.375rem] rounded-full',
+                idx === index ? 'bg-primary' : 'bg-[#E4E4E7]',
+              )}
               onClick={() => handleSpotsClick(index)}
             />
           )
         })}
-      </div>
-    </div>
+      </ul>
+    </>
   )
 }
+
+export default Carousel

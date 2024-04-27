@@ -1,6 +1,6 @@
-import { TopBar } from '@/containers/topbar'
-import { Carousel } from '@/containers/carousel'
-import { SearchBar } from '@/containers/searchbar'
+import TopBar from '@/containers/topbar'
+import Carousel from '@/containers/carousel'
+// import SearchBar from '@/containers/searchbar'
 import { ProjectsPreview } from '@/containers/projects-preview'
 import { Footer } from '@/containers/footer'
 import { About } from '@/containers/about'
@@ -14,27 +14,31 @@ export default function Home() {
       <TopBar />
 
       {/* 輪播圖 */}
-      <Carousel />
+      <section className='mb-6'>
+        <Carousel />
+      </section>
 
-      <div className='px-[1.25rem]'>
-        {/* 搜尋欄 */}
-        <SearchBar />
-
-        {/* 開專案 */}
-        <ProjectsApplications />
+      <main className='mb-6 flex flex-col items-center justify-center gap-y-6 px-5'>
+        {/* 搜尋欄(Phase2) */}
+        {/* <SearchBar /> */}
 
         {/* 揪夥伴 */}
         <ProjectsPreview />
 
+        {/* 開專案 */}
+        <ProjectsApplications />
+      </main>
+
+      <section>
         {/* 合作夥伴 */}
         <Cooperations />
 
         {/* 關於 SPT */}
         <About />
+      </section>
 
-        {/* 頁尾 */}
-        <Footer />
-      </div>
+      {/* 頁尾 */}
+      <Footer />
     </div>
   )
 }
