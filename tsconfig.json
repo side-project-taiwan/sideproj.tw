@@ -13,13 +13,12 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "plugins": [{ "name": "next" }],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "components": ["@/components"],
+      "utils": ["@/libs/utils"],
+      "ui": ["@/ui"]
     },
     "types": ["vitest/globals", "vitest/jsdom"]
   },
