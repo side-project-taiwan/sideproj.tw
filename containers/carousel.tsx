@@ -5,7 +5,7 @@ import { twMerge } from '@/libs/utils'
 
 const mockArray = [1, 2, 3, 4, 5]
 
-const Carousel = () => {
+export const Carousel = () => {
   const [idx, setIdx] = useState(0)
   const ref = useRef<HTMLDivElement | null>(null)
 
@@ -77,5 +77,3 @@ const Carousel = () => {
     </>
   )
 }
-
-export default Carousel

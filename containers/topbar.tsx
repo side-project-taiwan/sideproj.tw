@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const TopBar = () => {
+export const TopBar = () => {
   return (
     <header className='flex h-14 w-full items-center justify-between px-5 py-[0.8125rem]'>
       <Link href='/'>
@@ -15,5 +15,3 @@ const TopBar = () => {
     </header>
   )
 }
-
-export default TopBar

@@ -1,13 +1,13 @@
-import TopBar from '@/containers/topbar'
-import Carousel from '@/containers/carousel'
-// import SearchBar from '@/containers/searchbar'
+import { TopBar } from '@/containers/topbar'
+import { Carousel } from '@/containers/carousel'
+// import {SearchBar} from '@/containers/searchbar'
 import { ProjectsPreview } from '@/containers/projects-preview'
 import { Footer } from '@/containers/footer'
 import { About } from '@/containers/about'
 import { Cooperations } from '@/containers/cooperations'
 import { ProjectsApplications } from '@/containers/projects-applications'
 
-export default function Home() {
+const Home = () => {
   return (
     <div className='h-full w-full'>
       {/* 導覽列 */}
@@ -42,3 +42,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home
