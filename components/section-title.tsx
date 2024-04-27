@@ -1,22 +1,37 @@
 import { PAGE_CATEGORIES } from '@/constants/category'
-import React from 'react'
+import { twMerge } from '@/libs/utils'
 
-type SectionTitleProps = Record<'type', keyof typeof PAGE_CATEGORIES>
+type SectionTitleProps = {
+  type: keyof typeof PAGE_CATEGORIES
+  className?: string
+}
 
 export const SectionTitle = (props: SectionTitleProps) => {
-  const { type } = props
+  const { type, className } = props
 
-  const [title, ...rest] = PAGE_CATEGORIES[type]
-  const subTitle = rest.join('')
+  const categories = PAGE_CATEGORIES[type]
+  if (!categories) return null
+
+  if (type === 'COOPERATIONS' || type === 'ABOUT') {
+    return (
+      <h5
+        className={twMerge('mb-4 text-xl font-[500] text-[#18181B]', className)}
+      >
+        {categories}
+      </h5>
+    )
+  }
+
+  const [highlightWord, ...subTitle] = categories
 
   return (
-    <section className='flex h-[2.25rem] items-center gap-[0.5rem]'>
-      <div className='flex h-[2.25rem] w-[2.25rem] items-center justify-center rounded-full bg-primary text-[1.25rem] leading-[1.75rem] text-[white]'>
-        {title}
+    <h5 className={twMerge('mb-4 flex h-9 items-center gap-2', className)}>
+      <div className='flex h-9 w-9 items-center justify-center rounded-full bg-primary text-[1.25rem] leading-[1.75rem] text-[white]'>
+        {highlightWord}
       </div>
       <div className='text-[1.25rem] font-[600] leading-[1.75rem]'>
         {subTitle}
       </div>
-    </section>
+    </h5>
   )
 }
