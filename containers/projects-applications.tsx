@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { ROUTE } from '@/libs/routes'
+import { Icon } from '@/components/icon'
 import { SectionTitle } from '@/components/section-title'
+import { ROUTE } from '@/libs/routes'
 
 const CREATE_PROJECT_PATH = ROUTE.CREATE_PROJECT()
 
@@ -22,12 +22,7 @@ export const ProjectsApplications = () => {
         href={CREATE_PROJECT_PATH}
         className='flex h-10 items-center justify-center gap-x-2 rounded-md bg-blue-600 text-sm text-white'
       >
-        <Image
-          src='project-applications/psychiatry.svg'
-          width={20}
-          height={20}
-          alt='開專案'
-        />
+        <Icon type='psychiatry' width={20} height={20} />
         開啟專案
       </Link>
     </section>

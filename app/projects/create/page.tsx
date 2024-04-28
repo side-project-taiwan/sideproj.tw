@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { toast } from '@/components/ui/use-toast'
+// import { toast } from '@/components/ui/use-toast'
 import { Button } from '@/components/button'
 import { Icon } from '@/components/icon'
 import { Text } from '@/components/text'
@@ -21,14 +21,14 @@ const ProjectForm = () => {
 
   const goBack = () => router.back()
   const onSubmit = form.handleSubmit(data => {
-    toast({
-      title: 'you submitted the following values:',
-      description: (
-        <pre className='mt-2 w-[340px] rounded-md bg-slate-950 p-4'>
-          <code className='text-white'>{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    })
+    // toast({
+    //   title: 'you submitted the following values:',
+    //   description: (
+    //     <pre className='mt-2 w-[340px] rounded-md bg-slate-950 p-4'>
+    //       <code className='text-white'>{JSON.stringify(data, null, 2)}</code>
+    //     </pre>
+    //   ),
+    // })
 
     submit(data)
   })
