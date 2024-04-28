@@ -1,5 +1,5 @@
-import type { Config } from 'tailwindcss'
-import type { PluginAPI } from 'tailwindcss/types/config'
+import type { PluginAPI, Config } from 'tailwindcss/types/config'
+import resolveConfig from 'tailwindcss/resolveConfig'
 import plugin from 'tailwindcss/plugin'
 
 const config = {
@@ -12,14 +12,14 @@ const config = {
   ],
   prefix: '',
   theme: {
-    container: {
-      center: true,
-      padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
-    },
     extend: {
+      container: {
+        center: true,
+        padding: '2rem',
+        screens: {
+          '2xl': '1400px',
+        },
+      },
       screens: {
         mobile: { max: '375px' },
         tablet: { max: '1024px' },
@@ -27,6 +27,40 @@ const config = {
       },
       colors: {
         white: '#FFFFFF',
+        black: '#000000',
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
         'blue-50': '#EFF6FF',
         'blue-100': '#DAEAFE',
         'blue-200': '#BFDBFE',
@@ -37,7 +71,7 @@ const config = {
         'blue-700': '#1D4ED8',
         'blue-800': '#1E40AF',
         'blue-900': '#1E3A8A',
-        'zinc-50 ': '#FAFAFA',
+        'zinc-50': '#FAFAFA',
         'zinc-100': '#F4F4F5',
         'zinc-200': '#E4E4E7',
         'zinc-300': '#D4D4D8',
@@ -49,8 +83,10 @@ const config = {
         'zinc-900': '#18181B',
       },
       borderRadius: {
-        xs: '0.125rem',
-        sm: '0.25rem',
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+        xs: 'calc(var(--radius) - 6px)',
       },
       keyframes: {
         'accordion-down': {
@@ -80,5 +116,8 @@ const config = {
     }),
   ],
 } satisfies Config
+
+// FIXME: This is a workaround to get the type of the resolved config
+export const TAILWIND_CONFIG = resolveConfig<any>(config)
 
 export default config
