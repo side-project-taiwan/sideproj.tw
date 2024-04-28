@@ -19,7 +19,6 @@ type Props = PropsWithChildren<
     tag?: TextTagType
   } & TextTagHTMLAttributeType
 >
-
 export const Text = ({
   tag = 'span',
   varaint: _,

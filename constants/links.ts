@@ -5,4 +5,4 @@
 export const SOCIAL_LINKS = [
   { label: 'Discord', quickLinkPathname: '/dc' },
   { label: 'GitHub', quickLinkPathname: '/github' },
-]
+] as const

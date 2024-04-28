@@ -1,14 +1,24 @@
+import type { ComponentProps } from 'react'
 import Image from 'next/image'
-import { ComponentProps } from 'react'
 
 const IconMapping = {
+  logo: '/homepage/side-project.svg',
+  'logo-2': '/logo.svg',
   'arrow-left': '/arrow-left.svg',
+  psychiatry: 'project-applications/psychiatry.svg',
+  sheep: '/cooperations/sheep.svg',
+  daodao: '/cooperations/daodao.svg',
+  zeabur: '/cooperations/zeabur.svg',
+  discord: '/about/discord_icon.svg',
+  gitHub: '/about/github_icon.svg',
 } as const
+
+export type IconMappingType = keyof typeof IconMapping
 
 type ImageProps = Omit<ComponentProps<typeof Image>, 'src' | 'alt'>
 
 type IconProps = ImageProps & {
-  type: keyof typeof IconMapping
+  type: IconMappingType
   size?: ImageProps['width']
 }
 

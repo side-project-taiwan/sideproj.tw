@@ -1,4 +1,3 @@
-import { TopBar } from '@/containers/topbar'
 import { Carousel } from '@/containers/carousel'
 // import { SearchBar } from '@/containers/searchbar'
 import { ProjectsPreview } from '@/containers/projects-preview'
@@ -9,16 +8,13 @@ import { ProjectsApplications } from '@/containers/projects-applications'
 
 const Home = () => {
   return (
-    <div className='h-full w-full'>
-      {/* 導覽列 */}
-      <TopBar />
-
+    <main className='h-full w-full'>
       {/* 輪播圖 */}
       <section className='mb-6'>
         <Carousel />
       </section>
 
-      <main className='mb-6 flex flex-col items-center justify-center gap-y-6 px-5'>
+      <div className='mb-6 flex flex-col items-center justify-center gap-y-6 px-5'>
         {/* 搜尋欄(Phase2) */}
         {/* <SearchBar /> */}
 
@@ -27,7 +23,7 @@ const Home = () => {
 
         {/* 開專案 */}
         <ProjectsApplications />
-      </main>
+      </div>
 
       <section>
         {/* 合作夥伴 */}
@@ -39,7 +35,7 @@ const Home = () => {
 
       {/* 頁尾 */}
       <Footer />
-    </div>
+    </main>
   )
 }
 
