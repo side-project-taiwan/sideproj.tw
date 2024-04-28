@@ -117,7 +117,7 @@ const config = {
   ],
 } satisfies Config
 
-// FIXME: This is a workaround to get the type of the resolved config
+// FIXME: This is a workaround with any to avoid the type error
 export const TAILWIND_CONFIG = resolveConfig<any>(config)
 
 export default config
