@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { ROUTE } from '@/libs/routes'
 import { SectionTitle } from '@/components/section-title'
+
+const CREATE_PROJECT_PATH = ROUTE.CREATE_PROJECT()
 
 export const ProjectsApplications = () => {
   return (
@@ -16,7 +19,7 @@ export const ProjectsApplications = () => {
         </p>
       </div>
       <Link
-        href='#form'
+        href={CREATE_PROJECT_PATH}
         className='flex h-10 items-center justify-center gap-x-2 rounded-md bg-blue-600 text-sm text-white'
       >
         <Image
