@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import { Icon, type IconMappingType } from '@/components/icon'
 import { SectionTitle } from '@/components/section-title'
 import { SOCIAL_LINKS } from '@/constants/links'
 
@@ -44,11 +44,9 @@ export const About = () => {
                 href={link.quickLinkPathname}
                 className='flex items-center justify-center gap-x-2  text-sm text-blue-600'
               >
-                <Image
-                  src={`/about/${link.label.toLowerCase()}_icon.svg`}
-                  alt={link.label}
-                  width={16}
-                  height={16}
+                <Icon
+                  type={link.label.toLowerCase() as IconMappingType}
+                  size={16}
                 />
                 {link.label}
               </Link>

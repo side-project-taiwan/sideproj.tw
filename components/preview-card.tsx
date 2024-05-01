@@ -1,21 +1,17 @@
-import { PreviewCardTypes } from '@/types/projects'
-import Image from 'next/image'
+import type { PreviewCardTypes } from '@/types/projects'
+import { Icon } from '@/components/icon'
 
 type PreviewCardProps = PreviewCardTypes
 
 const PreviewCard = (props: PreviewCardProps) => {
   const { projectName, tags, description, createTime } = props
+
   return (
     <div className='flex w-full flex-col gap-y-2'>
       <div className='flex flex-col gap-y-3'>
         {/* Thumbnail and ProjectName */}
         <div className='flex gap-x-3'>
-          <Image
-            src={'/logo.svg'}
-            alt='project thumbnail'
-            width={42}
-            height={64}
-          />
+          <Icon type='logo-2' width={42} height={64} />
           <div className='flex flex-1 flex-col'>
             <span>{projectName}</span>
             <span className='text-xs text-blue-600'>{createTime}</span>

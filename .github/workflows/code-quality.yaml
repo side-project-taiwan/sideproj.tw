@@ -93,4 +93,4 @@ jobs:
           run_install: true
 
       - name: 📏 Format
-        run: pnpm format:check
+        run: pnpm prettier-check

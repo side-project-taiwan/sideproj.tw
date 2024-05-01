@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { TopBar } from '@/containers/topbar'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -42,7 +43,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang='en'>
-      <body className='relative'>{children}</body>
+      <body className='relative'>
+        <TopBar />
+        {children}
+      </body>
     </html>
   )
 }
