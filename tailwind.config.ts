@@ -8,22 +8,31 @@ const config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './containers/**/*.{js,ts,jsx,tsx,mdx}',
+    './constants/**/*.{js,ts,jsx,tsx,mdx}',
+    './libs/**/*.{js,ts,jsx,tsx,mdx}',
     './stories/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   prefix: '',
   theme: {
     extend: {
+      screens: {
+        mobile: { min: '375px' },
+        tablet: { min: '1024px' },
+        desktop: { min: '1440px' },
+      },
       container: {
         center: true,
-        padding: '2rem',
-        screens: {
-          '2xl': '1400px',
+        padding: {
+          DEFAULT: '1.25rem',
+          mobile: '0',
+          tablet: '0',
+          desktop: '0',
         },
-      },
-      screens: {
-        mobile: { max: '375px' },
-        tablet: { max: '1024px' },
-        desktop: { max: '1440px' },
+        screens: {
+          mobile: '100%',
+          tablet: '800px',
+          desktop: '800px',
+        },
       },
       colors: {
         white: '#FFFFFF',

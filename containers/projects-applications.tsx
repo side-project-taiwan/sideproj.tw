@@ -20,7 +20,7 @@ export const ProjectsApplications = () => {
       </div>
       <Link
         href={CREATE_PROJECT_PATH}
-        className='flex h-10 items-center justify-center gap-x-2 rounded-md bg-blue-600 text-sm text-white'
+        className='flex items-center justify-center gap-x-2 rounded-md bg-blue-600 px-4 py-3 text-sm text-white tablet:w-fit'
       >
         <Icon type='psychiatry' width={20} height={20} />
         開啟專案

@@ -9,7 +9,7 @@ const COOPERATION_NAMES = [
 
 export const Cooperations = () => {
   return (
-    <div className='mb-9 px-5'>
+    <section>
       <SectionTitle type='COOPERATIONS' className='mb-7' />
       <ul className='flex items-center justify-around'>
         {COOPERATION_NAMES.map(({ iconType, width, height }) => (
@@ -18,6 +18,6 @@ export const Cooperations = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   )
 }
