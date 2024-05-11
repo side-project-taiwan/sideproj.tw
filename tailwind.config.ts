@@ -2,6 +2,12 @@ import type { PluginAPI, Config } from 'tailwindcss/types/config'
 import resolveConfig from 'tailwindcss/resolveConfig'
 import plugin from 'tailwindcss/plugin'
 
+export const SCREEN = {
+  mobile: '375px',
+  tablet: '1024px',
+  desktop: '1440px',
+} as const
+
 const config = {
   darkMode: ['class'],
   content: [
@@ -15,11 +21,7 @@ const config = {
   prefix: '',
   theme: {
     extend: {
-      screens: {
-        mobile: { min: '375px' },
-        tablet: { min: '1024px' },
-        desktop: { min: '1440px' },
-      },
+      screens: SCREEN,
       container: {
         center: true,
         padding: {

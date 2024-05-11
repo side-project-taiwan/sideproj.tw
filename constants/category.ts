@@ -15,4 +15,8 @@ export const PAGE_CATEGORIES = {
  * - Projects' categories
  *
  */
-export const CATEGORY_LIST = ['category1', 'category2', 'category3']
+export const CATEGORY_LIST = [
+  { name: 'category1', value: 'category1' },
+  { name: 'category2', value: 'category2' },
+  { name: 'category3', value: 'category3' },
+]

@@ -9,4 +9,4 @@ export type PreviewCardTypes = {
   createTime: string
 }
 
-export type CategoryListTypes = (typeof CATEGORY_LIST)[number]
+export type CategoryListType = (typeof CATEGORY_LIST)[number]
