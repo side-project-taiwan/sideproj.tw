@@ -26,12 +26,10 @@ const config = {
         center: true,
         padding: {
           DEFAULT: '1.25rem',
-          mobile: '0',
           tablet: '0',
           desktop: '0',
         },
         screens: {
-          mobile: '100%',
           tablet: '800px',
           desktop: '800px',
         },

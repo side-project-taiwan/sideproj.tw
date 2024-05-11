@@ -1,5 +1,5 @@
-import { Carousel } from '@/containers/carousel'
 // import { SearchBar } from '@/containers/searchbar'
+import { Carousel } from '@/containers/carousel'
 import { ProjectsPreview } from '@/containers/projects-preview'
 import { Footer } from '@/containers/footer'
 import { About } from '@/containers/about'
@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <main className='h-full w-full'>
       {/* 輪播圖 */}
-      <section className='mb-6'>
+      <section className='mb-6 w-full'>
         <Carousel />
       </section>
 
