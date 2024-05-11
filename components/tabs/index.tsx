@@ -58,14 +58,10 @@ export const SPTTabs = ({
         ))}
       </TabsList>
       {tabs.map(tab => (
-        <TabsContent key={tab.name} value={tab.value}>
+        <TabsContent key={tab.value} value={tab.value}>
           {renderTabContent(tab)}
         </TabsContent>
       ))}
     </Tabs>
   )
 }
-
-// // // 'flex h-10 cursor-pointer items-center justify-center px-3 py-2 //
-// text-sm text-zinc-400', // currentCategory === category && // //
-// 'border-b-2 border-blue-600 text-blue-600',
