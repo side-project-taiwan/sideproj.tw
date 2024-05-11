@@ -1,6 +1,6 @@
-import { CategoryListTypes, PreviewCardTypes } from '@/types/projects'
+import { CategoryListType, PreviewCardTypes } from '@/types/projects'
 
-export const mockData: Record<CategoryListTypes, PreviewCardTypes[]> = {
+export const mockData: Record<CategoryListType['name'], PreviewCardTypes[]> = {
   category1: [
     {
       imgUrl: '',

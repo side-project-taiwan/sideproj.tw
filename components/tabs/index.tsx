@@ -1,3 +1,4 @@
+'use clinet'
 import {
   useState,
   useEffect,
