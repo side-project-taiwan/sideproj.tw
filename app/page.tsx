@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <main className='h-full w-full'>
       {/* 輪播圖 */}
-      <section className='mb-6 w-full'>
+      <section className='mb-6'>
         <Carousel />
       </section>
 

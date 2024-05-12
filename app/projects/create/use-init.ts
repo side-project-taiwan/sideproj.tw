@@ -35,6 +35,8 @@ export const useInit = () => {
   })
 
   const submit = (data: FormSchemaType) => {
+    // TODO: send data to discord channel
+    // eslint-disable-next-line no-console
     console.log(data)
   }
 

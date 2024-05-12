@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from '@/components/link'
 import { Icon } from '@/components/icon'
 import { SectionTitle } from '@/components/section-title'
 import { ROUTE } from '@/libs/routes'
