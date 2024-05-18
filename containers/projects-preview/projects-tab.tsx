@@ -22,13 +22,7 @@ export const ProjectsTab = ({ tabs, projects }: Props) => {
             key={index}
             className='border-b border-zinc-200 pb-4 last:border-0 last:pb-0'
           >
-            <PreviewCard
-              imgUrl={card.imgUrl}
-              projectName={card.projectName}
-              tags={card.tags}
-              description={card.description}
-              createTime={card.createTime}
-            />
+            <PreviewCard {...card} />
           </li>
         ))}
       </ul>
