@@ -1,5 +1,6 @@
 import { defineConfig, configDefaults } from 'vitest/config'
 import react from '@vitejs/plugin-react'
+import path from 'node:path'
 
 const SOURCE_FILES = [
   'app/**',
@@ -20,5 +21,10 @@ export default defineConfig({
     include: ['**/__tests__/*.test.[jt]s?(x)'],
     exclude: [...configDefaults.exclude, '**/.next/**'],
     coverage: { provider: 'v8', include: SOURCE_FILES },
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '.'),
+    },
   },
 })

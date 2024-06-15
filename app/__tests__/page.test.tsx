@@ -3,8 +3,8 @@ import Page from '../page'
 
 describe('Root page', () => {
   test('Should render logo correctly', async () => {
-    const { getByAltText } = render(<Page />)
+    const { getByLabelText } = render(<Page />)
 
-    expect(getByAltText('logo')).toBeInTheDocument()
+    expect(getByLabelText('banner-carousel')).toBeVisible()
   })
 })
