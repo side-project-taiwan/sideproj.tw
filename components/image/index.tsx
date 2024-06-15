@@ -1,6 +1,7 @@
 import NextImage from 'next/image'
 import { cn } from '@/libs/utils'
 
+// TODO: update the fallback image url from design
 const FALLBACK_URL = 'https://placehold.co/600x400' as const
 
 type Props = React.ComponentProps<typeof NextImage> & {

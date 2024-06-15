@@ -103,10 +103,6 @@ const Carousel = React.forwardRef<
         return
       }
 
-      // api.on('init', () => {
-      //   console.log('shadcn init')
-      // })
-
       setApi(api)
     }, [api, setApi])
 

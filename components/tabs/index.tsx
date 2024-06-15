@@ -2,8 +2,8 @@
 import {
   useState,
   useEffect,
+  type ReactNode,
   type ComponentPropsWithoutRef,
-  ReactNode,
 } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { cn } from '@/libs/utils'
@@ -28,7 +28,6 @@ export const SPTTabs = ({
   const [activeValue, setActiveValue] = useState(defaultValue || tabs[0].value)
   const onChange = (value: string) => setActiveValue(value)
   const activeTab = tabs.find(tab => tab.value === activeValue)
-
   useEffect(() => {
     if (!activeTab || !onTabChange) return
     onTabChange(activeTab)
@@ -58,6 +57,7 @@ export const SPTTabs = ({
           </TabsTrigger>
         ))}
       </TabsList>
+
       {tabs.map(tab => (
         <TabsContent key={tab.value} value={tab.value}>
           {renderTabContent(tab)}
