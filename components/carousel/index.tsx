@@ -12,6 +12,13 @@ import {
 import { SPTCarouselPaginaiton } from './pagination'
 
 const CAROUSEL_OPTION = { loop: true } as const
+const CAROUSEL_STYLE = {
+  tablet: {
+    carouselItem: 'tablet:basis-[calc(800px+3rem)]',
+    arrowPrev: 'tablet:left-[calc((100vw-800px)/2-3rem)] tablet:flex',
+    arrowNext: 'tablet:right-[calc((100vw-800px)/2-3rem)] tablet:flex',
+  },
+} as const
 
 type Props = PropsWithChildren<{}>
 
@@ -44,7 +51,7 @@ export const SPTCarousel = ({ children }: Props) => {
           <CarouselItem
             key={index}
             className={cn(
-              'tablet:basis-[calc(800px+3rem)]',
+              CAROUSEL_STYLE.tablet.carouselItem,
               'opacity-0 transition-opacity',
               api && (currentIndex === index ? 'opacity-100' : 'opacity-50'),
             )}
@@ -59,8 +66,10 @@ export const SPTCarousel = ({ children }: Props) => {
         onClick={onPaginationClick}
         className='mt-5'
       />
-      <CarouselPrevious className='hidden tablet:left-[calc((100vw-800px)/2-3rem)] tablet:flex' />
-      <CarouselNext className='hidden tablet:right-[calc((100vw-800px)/2-3rem)] tablet:flex' />
+      <CarouselPrevious
+        className={cn(CAROUSEL_STYLE.tablet.arrowPrev, 'hidden')}
+      />
+      <CarouselNext className={cn(CAROUSEL_STYLE.tablet.arrowNext, 'hidden')} />
     </Carousel>
   )
 }
