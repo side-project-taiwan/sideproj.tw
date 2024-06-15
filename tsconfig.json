@@ -15,8 +15,7 @@
     "incremental": true,
     "plugins": [{ "name": "next" }],
     "paths": {
-      "@/*": ["./*"],
-      "tailwind.config": ["./tailwind.config.ts"]
+      "@/*": ["./*"]
     },
     "types": ["vitest/globals", "vitest/jsdom"]
   },

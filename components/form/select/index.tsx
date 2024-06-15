@@ -1,4 +1,3 @@
-import { TAILWIND_CONFIG } from 'tailwind.config'
 import {
   FormField,
   type FormFieldProps,
@@ -8,6 +7,7 @@ import ReactSelect, { type Props as ReactSelectProps } from 'react-select'
 import animatedComponents from 'react-select/animated'
 import { useId } from 'react'
 import { cn } from '@/libs/utils'
+import { COLOR, BORDER_RADIUS } from '@/styles/tailwind'
 
 export type SelectProps<T extends FieldValues = FieldValues> = Omit<
   FormFieldProps<T>,
@@ -33,30 +33,30 @@ const customStyles: ReactSelectProps['styles'] = {
   control: styles => {
     return {
       ...styles,
-      backgroundColor: TAILWIND_CONFIG.theme.colors.white,
-      borderRadius: TAILWIND_CONFIG.theme.borderRadius.md,
-      borderColor: TAILWIND_CONFIG.theme.colors.input,
+      backgroundColor: COLOR.white,
+      borderRadius: BORDER_RADIUS.md,
+      borderColor: COLOR.input,
       boxShadow: undefined,
     }
   },
   multiValue: styles => {
     return {
       ...styles,
-      borderRadius: TAILWIND_CONFIG.theme.borderRadius.sm,
-      color: TAILWIND_CONFIG.theme.colors['zinc-500'],
-      backgroundColor: TAILWIND_CONFIG.theme.colors['zinc-200'],
+      borderRadius: BORDER_RADIUS.sm,
+      color: COLOR['zinc-500'],
+      backgroundColor: COLOR['zinc-200'],
     }
   },
   placeholder: styles => {
     return {
       ...styles,
-      color: TAILWIND_CONFIG.theme.colors['zinc-400'],
+      color: COLOR['zinc-400'],
     }
   },
   indicatorsContainer: styles => {
     return {
       ...styles,
-      color: TAILWIND_CONFIG.theme.colors['zinc-400'],
+      color: COLOR['zinc-400'],
     }
   },
 }

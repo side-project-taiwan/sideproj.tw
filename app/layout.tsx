@@ -1,5 +1,5 @@
 import { TopBar } from '@/containers/topbar'
-import './globals.css'
+import '@/styles/globals.css'
 
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (

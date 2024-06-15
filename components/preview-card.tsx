@@ -21,7 +21,7 @@ const PreviewCard = ({
           </div>
         </div>
         {/* Tags */}
-        <ul className='flex items-center gap-x-2'>
+        <ul className='flex items-center flex-wrap gap-2'>
           {tags.map((tag, index) => {
             return (
               <li

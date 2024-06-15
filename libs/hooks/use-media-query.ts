@@ -1,5 +1,5 @@
 import { useCallback, useSyncExternalStore } from 'react'
-import { SCREEN } from 'tailwind.config'
+import { SCREEN } from '@/styles/tailwind'
 
 export const useMediaQuery = (getQuery: (_screen: typeof SCREEN) => string) => {
   const subscribe = useCallback(
