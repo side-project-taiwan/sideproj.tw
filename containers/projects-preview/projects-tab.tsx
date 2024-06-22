@@ -38,7 +38,6 @@ export const ProjectsTab = ({ tabs, projects }: Props) => {
             key={tab.value}
             tabs={[tab]}
             renderTabContent={renderTabContent}
-            className='mb-[50px]'
           />
         ))
       ) : (

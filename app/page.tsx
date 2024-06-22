@@ -4,7 +4,7 @@ import { ProjectsPreview } from '@/containers/projects-preview'
 import { Footer } from '@/containers/footer'
 import { About } from '@/containers/about'
 import { Cooperations } from '@/containers/cooperations'
-import { ProjectsApplications } from '@/containers/projects-applications'
+// import { ProjectsApplications } from '@/containers/projects-applications'
 
 const Home = () => {
   return (
@@ -22,7 +22,7 @@ const Home = () => {
         <ProjectsPreview />
 
         {/* 開專案 */}
-        <ProjectsApplications />
+        {/* <ProjectsApplications /> */}
 
         {/* 合作夥伴 */}
         <Cooperations />

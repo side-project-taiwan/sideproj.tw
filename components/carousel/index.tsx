@@ -56,7 +56,7 @@ export const SPTCarousel = ({ children }: Props) => {
               api && (currentIndex === index ? 'opacity-100' : 'opacity-50'),
             )}
           >
-            {child}
+            <div className='relative h-full w-full'>{child}</div>
           </CarouselItem>
         ))}
       </CarouselContent>
