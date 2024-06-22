@@ -32,24 +32,26 @@ const ProjectForm = () => {
 
     submit(data)
   })
+
   return (
     <Form
       formContorl={form}
       onSubmit={onSubmit}
       className='flex flex-col gap-y-4 p-5'
     >
-      {/* Go Back */}
       <Button
         variant='native'
         className='flex items-center gap-x-2'
         onClick={goBack}
       >
         <Icon type='arrow-left' size={20} />
-        <span className='text-sm text-zinc-900'>回前頁</span>
+        <Text color='zinc-900' className='text-sm'>
+          回前頁
+        </Text>
       </Button>
 
       {/* Description */}
-      <Text tag='p' className='text-sm text-zinc-500'>
+      <Text tag='p' color='zinc-500' className='text-sm'>
         請填寫專案基本資訊，提交通過審核後將發送 Email 通知聯絡人
       </Text>
 

@@ -10,7 +10,7 @@ const IconMapping = {
   daodao: '/cooperations/daodao.svg',
   zeabur: '/cooperations/zeabur.svg',
   discord: '/about/discord_icon.svg',
-  gitHub: '/about/github_icon.svg',
+  github: '/about/github_icon.svg',
 } as const
 
 export type IconMappingType = keyof typeof IconMapping

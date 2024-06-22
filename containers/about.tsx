@@ -1,26 +1,23 @@
 import Link from 'next/link'
+import { SOCIAL_LINKS } from '@/constants/links'
 import { Icon, type IconMappingType } from '@/components/icon'
 import { SectionTitle } from '@/components/section-title'
-import { SOCIAL_LINKS } from '@/constants/links'
 
 export const About = () => {
   return (
-    <div className='bg-blue-600 px-5 py-6 text-white'>
-      <SectionTitle type='ABOUT' className='text-inherit' />
-
-      <div className='mb-4 text-sm'>
+    <section className='bg-blue-600 text-white'>
+      <div className='container space-y-4 py-6 text-sm'>
+        <SectionTitle type='ABOUT' className='text-inherit' />
         <p>
           Side Project Taiwan
           是一個定期舉辦線下聚會的技術社群，致力於促進專案開發、技術交流和個人成長。我們相信透過專案的實際開發，參與者能夠獲得實質的收穫，並在職涯中取得更多的成就。
         </p>
-        <br />
         <p>
           每月一次固定線下聚會，內容涵蓋多面向，包括但不限於開源專案、組隊合作、讀書會（涵蓋
           LeetCode、系統設計、程式語言等主題）以及產品開發等。我們的主軸圍繞著
           Side Project，參與者不僅限於工程師，也歡迎 PM、設計師、QA
           等多元角色參與。歡迎所有對專案開發有興趣的人加入我們，一同打造一個充滿活力且有意義的技術社群！
         </p>
-        <br />
         <p>
           有任何建議或想法，歡迎來信：
           <Link
@@ -31,29 +28,28 @@ export const About = () => {
             sideproj210@gmail.com
           </Link>
         </p>
-      </div>
-
-      <ul className='flex w-full items-center justify-center gap-2'>
-        {SOCIAL_LINKS.map(link => {
-          return (
-            <li
-              key={link.label}
-              className='flex h-10 w-full items-center justify-center rounded-md bg-white'
-            >
-              <Link
-                href={link.quickLinkPathname}
-                className='flex items-center justify-center gap-x-2  text-sm text-blue-600'
+        <ul className='flex w-full items-center justify-center gap-2'>
+          {SOCIAL_LINKS.map(link => {
+            return (
+              <li
+                key={link.label}
+                className='flex h-10 w-full items-center justify-center rounded-md bg-white'
               >
-                <Icon
-                  type={link.label.toLowerCase() as IconMappingType}
-                  size={16}
-                />
-                {link.label}
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
-    </div>
+                <Link
+                  href={link.quickLinkPathname}
+                  className='flex items-center justify-center gap-x-2  text-sm text-blue-600'
+                >
+                  <Icon
+                    type={link.label.toLowerCase() as IconMappingType}
+                    size={16}
+                  />
+                  {link.label}
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    </section>
   )
 }

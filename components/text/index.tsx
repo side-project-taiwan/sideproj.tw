@@ -1,4 +1,3 @@
-import TAILWIND_CONFIG from 'tailwind.config'
 import { useMemo, type PropsWithChildren } from 'react'
 import {
   getTextTag,
@@ -6,6 +5,7 @@ import {
   type TextTagHTMLAttributeType,
 } from './get-text-tag'
 import { type TextVariantType } from './get-text-variant'
+import { COLOR } from '@/styles/tailwind'
 import { cn } from '@/libs/utils'
 
 type Props = PropsWithChildren<
@@ -15,7 +15,7 @@ type Props = PropsWithChildren<
      * TODO: Variant is required after the design system is implemented
      */
     varaint?: TextVariantType
-    color?: keyof typeof TAILWIND_CONFIG.theme.extend.colors
+    color?: keyof typeof COLOR
     tag?: TextTagType
   } & TextTagHTMLAttributeType
 >

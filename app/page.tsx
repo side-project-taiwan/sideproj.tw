@@ -1,20 +1,20 @@
-import { Carousel } from '@/containers/carousel'
 // import { SearchBar } from '@/containers/searchbar'
+import { Carousel } from '@/containers/carousel'
 import { ProjectsPreview } from '@/containers/projects-preview'
 import { Footer } from '@/containers/footer'
 import { About } from '@/containers/about'
 import { Cooperations } from '@/containers/cooperations'
-import { ProjectsApplications } from '@/containers/projects-applications'
+// import { ProjectsApplications } from '@/containers/projects-applications'
 
 const Home = () => {
   return (
     <main className='h-full w-full'>
       {/* 輪播圖 */}
-      <section className='mb-6'>
+      <section aria-label='banner-carousel' className='mb-6'>
         <Carousel />
       </section>
 
-      <div className='mb-6 flex flex-col items-center justify-center gap-y-6 px-5'>
+      <div className='container mb-7 flex flex-col items-center justify-center gap-y-6'>
         {/* 搜尋欄(Phase2) */}
         {/* <SearchBar /> */}
 
@@ -22,16 +22,14 @@ const Home = () => {
         <ProjectsPreview />
 
         {/* 開專案 */}
-        <ProjectsApplications />
-      </div>
+        {/* <ProjectsApplications /> */}
 
-      <section>
         {/* 合作夥伴 */}
         <Cooperations />
+      </div>
 
-        {/* 關於 SPT */}
-        <About />
-      </section>
+      {/* 關於 SPT */}
+      <About />
 
       {/* 頁尾 */}
       <Footer />

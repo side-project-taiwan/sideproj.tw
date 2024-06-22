@@ -10,6 +10,8 @@ export type RolesTypes =
   | 'DevOps'
   | 'QA'
   | 'MIS'
+  | 'Education'
+  | 'Self-learning'
 
 export type FrontendLanTypes = 'JavaScript' | 'TypeScript' | 'HTML' | 'CSS'
 
@@ -50,3 +52,5 @@ export type BackendFrameWorkTypes =
   | 'C#'
   | 'C++'
   | 'C'
+
+export type DevopsTypes = 'CI/CD'
