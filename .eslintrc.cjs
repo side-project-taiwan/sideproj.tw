@@ -4,6 +4,7 @@ module.exports = {
     'plugin:storybook/recommended',
     'plugin:prettier/recommended',
   ],
+  plugins: ['prettier'],
   rules: {
     'prettier/prettier': 'error',
     'import/no-anonymous-default-export': 'off',
