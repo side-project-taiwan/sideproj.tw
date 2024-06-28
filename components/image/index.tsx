@@ -10,15 +10,23 @@ type Props = React.ComponentProps<typeof NextImage> & {
 
 export const Image = ({
   src,
-  fallbackSrc = FALLBACK_URL,
   className,
+  style,
+  width,
+  height,
+  fallbackSrc = FALLBACK_URL,
   ...props
 }: Props) => {
   const imgUrl = src || fallbackSrc
+  const imgSizesProps =
+    width && height
+      ? { width, height, style: { width: 'auto', height: 'auto', ...style } }
+      : { style }
 
   return (
     <NextImage
       {...props}
+      {...imgSizesProps}
       src={imgUrl}
       className={cn('max-w-full', className)}
     />

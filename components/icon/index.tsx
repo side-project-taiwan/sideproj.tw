@@ -1,5 +1,5 @@
 import type { ComponentProps } from 'react'
-import Image from 'next/image'
+import { Image } from '../image'
 // import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 const IconMapping = {
@@ -30,7 +30,7 @@ export const Icon = ({
   width,
   height,
   fill,
-  ...imgProps
+  ...iconProps
 }: IconProps) => {
   const iconSrc = IconMapping[type]
 
@@ -42,5 +42,5 @@ export const Icon = ({
       ? { width, height }
       : { width: size, height: size }
 
-  return <Image {...imgProps} {...sizes} src={iconSrc} alt={`icon ${type}`} />
+  return <Image {...iconProps} {...sizes} src={iconSrc} alt={`icon ${type}`} />
 }
