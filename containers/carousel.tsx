@@ -9,16 +9,20 @@ const MOCK_CAROUSEL_SRCS = [
 
 export const Carousel = () => {
   return (
-    <SPTCarousel>
+    <SPTCarousel
+      slideClassName='!w-[800px] !h-[450px]'
+      initialSlide={1}
+      centeredSlides
+    >
       {MOCK_CAROUSEL_SRCS.map(src => {
         return (
           <Image
             key={src}
             src={src}
-            width={1200}
-            height={450}
-            alt='placeholder'
-            className='object-fit tablet:max-w-[800px]'
+            alt='hero banner'
+            priority
+            fill
+            sizes='100vw, (min-width: 800px) 800px'
           />
         )
       })}

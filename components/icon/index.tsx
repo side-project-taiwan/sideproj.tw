@@ -1,10 +1,12 @@
 import type { ComponentProps } from 'react'
 import Image from 'next/image'
+// import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 const IconMapping = {
   logo: '/homepage/side-project.svg',
   'logo-2': '/logo.svg',
   'arrow-left': '/arrow-left.svg',
+  'arrow-right': '/arrow-right.svg',
   psychiatry: 'project-applications/psychiatry.svg',
   sheep: '/cooperations/sheep.svg',
   daodao: '/cooperations/daodao.svg',
