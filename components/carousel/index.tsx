@@ -17,6 +17,7 @@ type Props = PropsWithChildren<
 >
 
 export const SPTCarousel = ({
+  wrapperTag = 'ul',
   absoluteArrow = true,
   wrapperClassName,
   slideClassName,
@@ -57,16 +58,16 @@ export const SPTCarousel = ({
           />
         )}
         <Swiper
-          wrapperTag='ul'
-          slidesPerView='auto'
-          spaceBetween={16}
           cssMode
           grabCursor
           autoHeight
           simulateTouch
           centeredSlides
           watchSlidesProgress
+          spaceBetween={16}
+          slidesPerView='auto'
           {...swieprProps}
+          wrapperTag={wrapperTag}
           onBeforeInit={swiper => {
             setIsInit(false)
             swiperRef.current = swiper
@@ -82,7 +83,10 @@ export const SPTCarousel = ({
           }}
         >
           {Children.map(children, child => (
-            <SwiperSlide tag='li' className={cn('relative', slideClassName)}>
+            <SwiperSlide
+              tag={wrapperTag === 'ul' ? 'li' : undefined}
+              className={cn('relative', slideClassName)}
+            >
               {child}
             </SwiperSlide>
           ))}
