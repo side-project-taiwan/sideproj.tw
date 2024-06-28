@@ -1,4 +1,4 @@
-import type { PluginAPI, Config } from 'tailwindcss/types/CONFIG'
+import type { PluginAPI, Config } from 'tailwindcss/types/config'
 import plugin from 'tailwindcss/plugin'
 import { COLOR, SCREEN, BORDER_RADIUS } from './styles/tailwind'
 
