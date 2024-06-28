@@ -1,10 +1,12 @@
 import type { ComponentProps } from 'react'
-import Image from 'next/image'
+import { Image } from '../image'
+// import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 const IconMapping = {
   logo: '/homepage/side-project.svg',
   'logo-2': '/logo.svg',
   'arrow-left': '/arrow-left.svg',
+  'arrow-right': '/arrow-right.svg',
   psychiatry: 'project-applications/psychiatry.svg',
   sheep: '/cooperations/sheep.svg',
   daodao: '/cooperations/daodao.svg',
@@ -28,7 +30,7 @@ export const Icon = ({
   width,
   height,
   fill,
-  ...imgProps
+  ...iconProps
 }: IconProps) => {
   const iconSrc = IconMapping[type]
 
@@ -40,5 +42,5 @@ export const Icon = ({
       ? { width, height }
       : { width: size, height: size }
 
-  return <Image {...imgProps} {...sizes} src={iconSrc} alt={`icon ${type}`} />
+  return <Image {...iconProps} {...sizes} src={iconSrc} alt={`icon ${type}`} />
 }

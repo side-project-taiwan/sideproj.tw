@@ -15,6 +15,17 @@ const CONFIG = {
   prefix: '',
   theme: {
     extend: {
+      zIndex: {
+        navbar: '3000',
+        announcement: '3001',
+        overlay: '3002',
+        modal: '3003',
+        drawer: '3004',
+        dropdown: '3005',
+        tooltip: '3006',
+        popover: '3007',
+        toast: '3008',
+      },
       screens: SCREEN,
       container: {
         center: true,
