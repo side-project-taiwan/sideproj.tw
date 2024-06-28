@@ -1,5 +1,6 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import { Link } from '@/components/link'
+import { Image } from '@/components/image'
+import { Text } from '@/components/text'
 
 const NotFoundPage = () => {
   return (
@@ -11,8 +12,12 @@ const NotFoundPage = () => {
         height={300}
         alt='logo'
       />
-      <h2>Not Found</h2>
-      <p className='mb-24'>Page not support currently</p>
+      <Text tag='h2' className='text-3xl'>
+        Not Found
+      </Text>
+      <Text tag='p' className='mb-24'>
+        Page not support currently
+      </Text>
       <Link href='/'>Go To Home</Link>
     </div>
   )
