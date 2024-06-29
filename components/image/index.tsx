@@ -12,21 +12,14 @@ export const Image = ({
   src,
   className,
   style,
-  width,
-  height,
   fallbackSrc = FALLBACK_URL,
   ...props
 }: Props) => {
   const imgUrl = src || fallbackSrc
-  const imgSizesProps =
-    width && height
-      ? { width, height, style: { width: 'auto', height: 'auto', ...style } }
-      : { style }
 
   return (
     <NextImage
       {...props}
-      {...imgSizesProps}
       src={imgUrl}
       className={cn('max-w-full', className)}
     />
