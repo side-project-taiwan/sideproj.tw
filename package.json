@@ -13,7 +13,8 @@
     "prettier-check": "prettier --check .",
     "prettier-fix": "prettier --write .",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
