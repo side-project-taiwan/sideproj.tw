@@ -1,7 +1,7 @@
 /**
- * @type {import('next').NextConfig['rewrites']}
+ * @type {import('next').NextConfig['redirects']}
  */
-const rewrites = async () => {
+const redirects = async () => {
   return [
     // github
     {
@@ -23,4 +23,4 @@ const rewrites = async () => {
   ]
 }
 
-module.exports = rewrites
+module.exports = redirects
