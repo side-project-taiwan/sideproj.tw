@@ -9,11 +9,7 @@ const MOCK_CAROUSEL_SRCS = [
 
 export const Carousel = () => {
   return (
-    <SPTCarousel
-      slideClassName='!w-[800px] !h-[450px]'
-      initialSlide={1}
-      centeredSlides
-    >
+    <SPTCarousel slideClassName='!w-[800px] !h-[450px]' centeredSlides>
       {MOCK_CAROUSEL_SRCS.map(src => {
         return (
           <Image
