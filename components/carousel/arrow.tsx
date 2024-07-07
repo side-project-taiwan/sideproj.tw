@@ -23,7 +23,7 @@ export const SPTArrow = ({
       disabled={disabled}
       className={cn(
         'h-9 w-9 cursor-pointer rounded-full bg-blue-500 p-0',
-        'z-10 flex flex-shrink-0 items-center justify-center',
+        'z-10 hidden flex-shrink-0 items-center justify-center tablet:flex',
         absoluteArrow
           ? [
               'absolute top-1/2 -translate-y-1/2',
