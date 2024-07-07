@@ -9,7 +9,10 @@ const MOCK_CAROUSEL_SRCS = [
 
 export const Carousel = () => {
   return (
-    <SPTCarousel slideClassName='!w-[800px] !h-[450px]' centeredSlides>
+    <SPTCarousel
+      slideClassName='aspect-[421/211] !h-[211px] tablet:!h-[450px] tablet:aspect-[850/450] max-w-[800px]'
+      centeredSlides
+    >
       {MOCK_CAROUSEL_SRCS.map(src => {
         return (
           <Image
@@ -19,6 +22,7 @@ export const Carousel = () => {
             priority
             fill
             sizes='100vw, (min-width: 800px) 800px'
+            className='object-fill'
           />
         )
       })}
